@@ -10,8 +10,7 @@ fi
 read -p "Following process will erase all data in you SDCard, do you want to proceed? (Y/N)" yn
 case $yn in
         [Yy]* ) break ;;
-        [Nn]* ) echo "program exit";;
-                exit;;
+        [Nn]* ) echo "program exit"; exit;;
         * ) echo "Please answer Y/N";;
 esac
 
@@ -41,8 +40,7 @@ sed -i -- 's/enabled '0'/enabled '1'/g' *
 read -p "All setting have been done, do you want to reboot? (Y/N)" yn
 case $yn in
 	[Yy]* ) reboot; break ;;
-	[Nn]* ) echo "you have to reboot to make it work";;
-		exit;;
+	[Nn]* ) echo "you have to reboot to make it work"; exit;;
 	* ) echo "Please answer Y/N";;
 esac
 
