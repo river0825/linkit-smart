@@ -23,7 +23,10 @@ echo "Format the SD card. ext4 file system"
 mkfs.ext4 /dev/mmcblk0p1
 
 echo "Duplicate the current root FS and move it to the SD card"
-mount /dev/mmcblk0p1 /mnt
+if mount /dev/mmcblk0p1 /mnt; then
+	echo "sdcard mount fail, try again with another sdcard"
+	exit
+fi
 tar -C /overlay -cvf - . | tar -C /mnt -xf -
 umount /mnt
 
