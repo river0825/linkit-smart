@@ -35,7 +35,7 @@ block detect > /etc/config/fstab
 
 echo "========= Open the fstab configuration and edit it ========="
 sed -i -- "s/mnt\/mcblk0p1/overlay/g" /etc/config/fstab
-sed -i -- "s/enabled\t'0'/enabled\t'1"/g' *
+sed -i -- "s/enabled\t'0'/enabled\t'1"/g' /etc/config/fstab
 
 while true; do
 	read -p "All setting have been done, do you want to reboot? (Y/N)" yn
